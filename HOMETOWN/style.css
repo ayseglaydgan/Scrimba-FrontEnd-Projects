@@ -21,7 +21,6 @@ img {
 .hero{
     display: flex;
     flex-direction: column;
-    height: 340px;
     background-image: url(images/aydin.jpeg);
     background-size: cover;
     align-items: center;
@@ -29,6 +28,7 @@ img {
     padding-left: 247px;
     padding-right: 247px;
     padding-top: 120px;
+    padding-bottom: 120px;
     color: white;
 }
 
@@ -39,7 +39,11 @@ img {
     padding-right: 12px;
     padding-top: 3px;
     padding-bottom: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 3px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
 }
 
 #subheader{
@@ -49,7 +53,52 @@ img {
     padding-right: 29px;
     padding-top: 5px;
     padding-bottom: 8px; 
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18.72px;
+    width: 50vw;
 }
+
+.activities{
+    background-color: #F1FAEE;
+
+
+}
+#header_2{
+    color: #1D3557;
+    margin: auto;
+    padding-top: 40px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    
+}
+
+.activity-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+.activity{
+    padding: 10px;
+}
+
+#act_img{
+ 
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+}
+
+
 
 
 
