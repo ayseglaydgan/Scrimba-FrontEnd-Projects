@@ -1,0 +1,8 @@
+@font-face {
+    font-family: HarryPotter;
+    src: url("ParryHotter.ttf");
+}
+
+h1{
+    font-family: HarryPotter;
+}

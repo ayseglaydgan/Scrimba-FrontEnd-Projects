@@ -1,0 +1,40 @@
+body{
+    color: #82a5ca;
+    text-align: center;
+    font-family: OrbitronBold;
+    margin: 0;
+}
+
+@font-face {
+    font-family: OrbitronBold;
+    src: url(Orbitron\ Bold.ttf);
+}
+
+#hero{
+    background-image: url("galaxy.gif");
+    padding: 10px 0px 50px 0px;
+    background-size: cover;
+}
+
+#shadow{
+    text-shadow: 0px 0px 40px black;
+}
+
+
+.btn{
+    padding: 6px 12px;
+    background: white;
+    border: none;
+    font-family: inherit;
+    color: #82a5ca;
+
+}
+
+.underline{
+    
+    border-bottom: 4px solid white;
+
+}
+#logo{
+    width: 100px;
+}
