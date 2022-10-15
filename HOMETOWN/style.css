@@ -19,18 +19,38 @@ img {
 }
 
 .hero{
+    display: flex;
+    flex-direction: column;
     height: 340px;
     background-image: url(images/aydin.jpeg);
     background-size: cover;
     align-items: center;
     justify-content: center;
-
+    padding-left: 247px;
+    padding-right: 247px;
+    padding-top: 120px;
     color: white;
 }
 
 #header{
-    background: red;
-    display: inline;
+    background: #1D3557;
+    border-radius: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
 }
+
+#subheader{
+    background: #457B9D;
+    border-radius: 10px;
+    padding-left: 28px;
+    padding-right: 29px;
+    padding-top: 5px;
+    padding-bottom: 8px; 
+}
+
+
 
 
