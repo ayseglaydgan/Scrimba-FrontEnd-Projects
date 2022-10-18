@@ -32,3 +32,15 @@ h3{
     border-radius: 10px;
     
 }
+
+#guest_score {
+    font-family: DigitalClock;
+    font-size: 100px;
+    color: red;
+    margin: 10px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: black;
+    border-radius: 10px;
+    
+}
