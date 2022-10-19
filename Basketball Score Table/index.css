@@ -11,7 +11,7 @@ body {
 
 .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 h3{
@@ -30,6 +30,7 @@ h3{
     text-align: center;
     background-color: black;
     border-radius: 10px;
+    width: 150px;
     
 }
 
@@ -42,5 +43,43 @@ h3{
     text-align: center;
     background-color: black;
     border-radius: 10px;
+    width: 150px;
     
+}
+
+#button-wrapper{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#increment-one{
+    font-family: DigitalClock;
+    font-size: 30px;
+    color: #9AABD8;
+    background-color: transparent;
+    border: 2px solid ;
+    border-radius: 5px;
+    width: 40px;
+}
+
+#increment-two{
+    font-family: DigitalClock;
+    font-size: 30px;
+    color: #9AABD8;
+    background-color: transparent;
+    border: 2px solid ;
+    border-radius: 5px;
+    width: 40px;
+}
+
+#increment-three{
+    font-family: DigitalClock;
+    font-size: 30px;
+    color: #9AABD8;
+    background-color: transparent;
+    border: 2px solid ;
+    border-radius: 5px;
+    width: 40px;
 }
