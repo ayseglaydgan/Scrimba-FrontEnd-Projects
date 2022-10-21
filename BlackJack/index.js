@@ -1,5 +1,6 @@
 let num1 = 10;
 let num2 = 7;
+let cards = [num1, num2];
 
 let sum = num1 + num2;
 
@@ -11,9 +12,15 @@ let isAlive = true;
 let message = "";
 
 let messageEl = document.getElementById("message-el");
-let sumEl = document.getElementById("sum-el");
+//let sumEl = document.getElementById("sum-el");
+let sumEl = document.querySelector("#sum-el");
+let cardsEl = document.getElementById("cards-el");
 
-function startGame(){
+function renderGame(){
+    cardsEl.textContent = "Cards: ";
+    for(let i = 0; i < cards.length; i++){
+        cardsEl.textContent += cards[i] + " ";
+    }
     sumEl.textContent = "Sum: " + sum;
 
     if (sum <= 20) {
@@ -32,4 +39,17 @@ function startGame(){
     messageEl.textContent = message;
     
     console.log(message);
+}
+
+function startGame(){
+    renderGame();
+}
+
+
+function newCard(){
+    console.log("Drawing a new card from the deck!");
+    let newCard = 9;
+    cards.push(newCard);
+    sum += newCard;
+    renderGame();
 }
