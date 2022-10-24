@@ -28,6 +28,27 @@ h1, p{
     margin-top: 10px;
 }
 
+#change-length{
+    color: #D5D4D8;
+    font-size: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}   
+
+#length{
+    color: #0a041d;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100px;
+    height: 40px;
+    background: #fff;
+    border-radius: 10px;
+    text-align: center;
+
+} 
 
 #generate-btn{
     background-color: #10B981;
@@ -38,7 +59,25 @@ h1, p{
     font-weight: 400;
     padding: 9px 15px;
     margin-top: 60px;
+    width: 200px;
 }
+
+#button-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+#increment{
+    width: 40px;
+    height: 40px;
+}
+
+#decrement{
+   
+    width: 40px;
+    height: 40px;
+}
+
 
 #password-one{
     background-color: #273549;
