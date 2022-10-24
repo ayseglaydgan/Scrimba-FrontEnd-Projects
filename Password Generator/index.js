@@ -39,11 +39,11 @@ function decrement(){
     length.textContent = len;
 }
 
-function copyToClipboard(e) {
+/*function copyToClipboard(e) {
     let passToCopy = e.target.innerText
     navigator.clipboard.writeText(passToCopy)
 }
 const outputArr = document.getElementsByClassName('output')
 
-Array.from(outputArr).forEach(output => output.addEventListener('click', copy))
+Array.from(outputArr).forEach(output => output.addEventListener('click', copy))*/
 
