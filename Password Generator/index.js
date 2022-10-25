@@ -47,10 +47,8 @@ function decrement(){
 }
 
 async function copyToClipboard() {
-
     const toCopy = passwordOne.textContent;
     await navigator.clipboard.writeText(toCopy);s
-
 }
  
 
