@@ -1,15 +1,15 @@
-console.log("hello");
 
 const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
 "/"]; //91 characters
 
-let len = 0;
+let len = 4;
 
 let passwordOne = document.getElementById("password-one");
 let passwordTwo = document.getElementById("password-two");
 
 let length = document.getElementById("length");
 
+let flag = false;
 
 function generatePassword(){
     let password_one = "";
@@ -39,14 +39,18 @@ function decrement(){
     length.textContent = len;
 }
 
-/*function copyToClipboard(e) {
-    let passToCopy = e.target.innerText
-    navigator.clipboard.writeText(passToCopy)
-}
-const outputArr = document.getElementsByClassName('output')
+/*function copyToClipboard() {
+    const elem = document.createElement('password-one');
+    elem.value = passwordOne.textContent;
+    document.body.appendChild(elem);
+    elem.select();
+    document.execCommand('copy');
+    document.body.removeChild(elem);
+ }*/
 
-Array.from(outputArr).forEach(output => output.addEventListener('click', copy))*/
-
-
+ function toggleNonAlpha(){
+    flag = true;
+    return flag;
+ }
 
 
