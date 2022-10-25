@@ -47,3 +47,6 @@ const outputArr = document.getElementsByClassName('output')
 
 Array.from(outputArr).forEach(output => output.addEventListener('click', copy))*/
 
+
+
+
