@@ -6,11 +6,10 @@ const character_2 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 
 let len = 4;
 
-let passwordOne = document.getElementById("password-one");
-let passwordTwo = document.getElementById("password-two");
-
-let length = document.getElementById("length");
-
+const passwordOne = document.getElementById("password-one");
+const passwordTwo = document.getElementById("password-two");
+const length = document.getElementById("length");
+const nonAlpha = document.getElementById("non-alpha");
 
 let flag = false;
 
@@ -19,7 +18,7 @@ function generatePassword(){
     let password_one = "";
     let password_two = "";
 
-    let chars =  !flag ? character_1 : character_2;
+    const chars =  !flag ? character_1 : character_2;
 
     for(let i = 0; i < len; i++){
         
@@ -58,12 +57,10 @@ function decrement(){
 
  function toggleNonAlpha(){
     flag = !flag;
-    if(!flag){
-        document.getElementById("symbols-numbers").textContent = "DONT INCLUDE SYMBOLS AND NUMBERS";
-    }
-    else{
-        document.getElementById("symbols-numbers").textContent = "INCLUDE SYMBOLS AND NUMBERS";
-    }
+    
+    nonAlpha.textContent = 
+            !flag ? "DONT INCLUDE SYMBOLS AND NUMBERS" 
+                : "INCLUDE SYMBOLS AND NUMBERS";
  }
 
 
