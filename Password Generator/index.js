@@ -46,14 +46,13 @@ function decrement(){
     length.textContent = len;
 }
 
-/*function copyToClipboard() {
-    const elem = document.createElement('password-one');
-    elem.value = passwordOne.textContent;
-    document.body.appendChild(elem);
-    elem.select();
-    document.execCommand('copy');
-    document.body.removeChild(elem);
- }*/
+async function copyToClipboard() {
+
+    const toCopy = passwordOne.textContent;
+    await navigator.clipboard.writeText(toCopy);s
+
+}
+ 
 
  function toggleNonAlpha(){
     flag = !flag;
@@ -61,6 +60,6 @@ function decrement(){
     nonAlpha.textContent = 
             !flag ? "DONT INCLUDE SYMBOLS AND NUMBERS" 
                 : "INCLUDE SYMBOLS AND NUMBERS";
- }
+}
 
 
