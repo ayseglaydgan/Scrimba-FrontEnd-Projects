@@ -126,4 +126,5 @@ h1, p{
 #non-alpha:hover{
     background-color: #4ADF86;
     color: #fff;
+    opacity: 0.5;
 }
