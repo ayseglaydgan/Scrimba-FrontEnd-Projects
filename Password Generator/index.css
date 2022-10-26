@@ -120,4 +120,10 @@ h1, p{
     border-radius: 20px;
     background-color: #D5D4D8;
 
+
+}
+
+#non-alpha:hover{
+    background-color: #4ADF86;
+    color: #fff;
 }
