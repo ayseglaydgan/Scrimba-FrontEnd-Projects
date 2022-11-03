@@ -26,14 +26,16 @@ button{
 
 }
 
-ul{
-
+ul {
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
 }
 
-li{
-
+li {
+    margin-top: 5px;
 }
 
-a{
-
+a {
+    color: #5f9341;
 }
