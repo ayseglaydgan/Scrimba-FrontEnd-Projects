@@ -18,16 +18,14 @@ inputBtn.addEventListener('click', function() {
     
 })
 
-
-
 function renderLeads(){
     let listItems = "";
     console.log(myLeads);
     for (let i = 0; i < myLeads.length; i++) {
         console.log(myLeads[i]);
         listItems += `
-        <li>
-            <a target='_blank' href='${myLeads[i]}'>
+        <li id= list>
+            <a id= myLeads target='_blank' href='${myLeads[i]}'>
                 ${myLeads[i]}
             </a>
         </li>
