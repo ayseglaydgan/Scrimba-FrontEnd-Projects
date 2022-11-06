@@ -26,16 +26,16 @@ button{
 
 }
 
-ul {
+.ul-el {
     margin-top: 20px;
     list-style: none;
     padding-left: 0;
 }
 
-li {
+.list {
     margin-top: 5px;
 }
 
-a {
+.myLeads {
     color: #5f9341;
 }
