@@ -6,6 +6,8 @@ import User from './components/User';
 import Counter from './components/Counter';
 import Colors from './components/Colors';
 
+import Form from './components/Form';
+
 const isLoggedin = true;
 
 const user= {
@@ -22,7 +24,7 @@ const user= {
 function App() {
   return (
     <div className="App">
-      <Colors />
+      <Form />
     {/* /* <User 
       data={{
         name: "John",
