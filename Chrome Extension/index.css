@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    
+    min-width: 400px;
 }
 
 input{
@@ -36,6 +36,6 @@ button{
     margin-top: 5px;
 }
 
-.myLeads {
+li a {
     color: #5f9341;
 }
