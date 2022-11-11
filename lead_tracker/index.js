@@ -1,6 +1,5 @@
 let myLeads = [];
 
-
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById('input-btn');
 const deleteBtn = document.getElementById('delete-btn');
@@ -14,43 +13,24 @@ const addHttpsIfMissing = (url) => {
     }
 }
 
-
-let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 if(leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage;
-    renderLeads();
+    render(myLeads);
 }
 
-inputBtn.addEventListener('click', function() {
-    myLeads.push(addHttpsIfMissing(inputEl.value));
-    renderLeads();
-    inputEl.value = "";
-    localStorage.setItem("myLeads", JSON.stringify(myLeads));
-    
-})
-
-deleteBtn.addEventListener('click', function() {
-    //remove the input item from the array
-    myLeads.pop(inputEl.value);
-    renderLeads();
-    localStorage.setItem("myLeads", JSON.stringify(myLeads));
-})
-
-
-
-function renderLeads(){
+function render(leads){
     let listItems = "";
     console.log(myLeads);
-    for (let i = 0; i < myLeads.length; i++) {
+    for (let i = 0; i < leads.length; i++) {
         console.log(myLeads[i]);
         listItems += `
         <li id= list>
-            <a id= myLeads target='_blank' href='${myLeads[i]}'>
-                ${myLeads[i]}
+            <a target='_blank' href='${leads[i]}'>
+                ${leads[i]}
             </a>
         </li>
     `
-
     /*const li = document.createElement("li");
         li.textContent = myLeads[i];
         ulEl.append(li);*/
@@ -58,3 +38,18 @@ function renderLeads(){
     ulEl.innerHTML = listItems;
     
 }
+
+inputBtn.addEventListener('click', function() {
+    myLeads.push(addHttpsIfMissing(inputEl.value));
+    render(myLeads);
+    inputEl.value = "";
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+    
+})
+
+deleteBtn.addEventListener('dblclick', function(){
+    console.log('double click');
+    localStorage.clear();
+    myLeads = [];
+    render(myLeads);
+})
