@@ -1,17 +1,9 @@
-let myLeads = `["www.awesomelead.com"]`;
-
-myLeads = JSON.parse(myLeads);
-
-myLeads.push("www.awesomelead_.com");
-
-myLeads = JSON.stringify(myLeads);
-
-console.log(typeof myLeads);
-
+let myLeads = [];
 
 
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById('input-btn');
+const deleteBtn = document.getElementById('delete-btn');
 const ulEl = document.getElementById("ul-el"); 
 
 const addHttpsIfMissing = (url) => {
@@ -22,12 +14,29 @@ const addHttpsIfMissing = (url) => {
     }
 }
 
+
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
+if(leadsFromLocalStorage){
+    myLeads = leadsFromLocalStorage;
+    renderLeads();
+}
+
 inputBtn.addEventListener('click', function() {
     myLeads.push(addHttpsIfMissing(inputEl.value));
     renderLeads();
     inputEl.value = "";
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
     
 })
+
+deleteBtn.addEventListener('click', function() {
+    //remove the input item from the array
+    myLeads.pop(inputEl.value);
+    renderLeads();
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+})
+
+
 
 function renderLeads(){
     let listItems = "";

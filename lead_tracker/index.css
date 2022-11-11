@@ -23,7 +23,13 @@ button{
     color: white;
     border: none;
     font-weight: bold ;
+    
+}
 
+#delete-btn{
+    background-color: white;
+    color: #5f9341;
+    border: 1px solid #5f9341;
 }
 
 .ul-el {
