@@ -6,12 +6,19 @@ const deleteBtn = document.getElementById('delete-btn');
 const tabBtn = document.getElementById("tab-btn");
 const ulEl = document.getElementById("ul-el"); 
 
-const tabs = [ {url: "https://www.google.com"} ]
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 
-tabBtn.addEventListener("click", function(){
-    myLeads.push(tabs[0].url)
-    localStorage.setItem("myLeads", JSON.stringify(myLeads))
-    render(myLeads)
+if(leadsFromLocalStorage){
+    myLeads = leadsFromLocalStorage;
+    render(myLeads);
+}
+
+tabBtn.addEventListener("click", function(){    
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads) )
+        render(myLeads)
+    })
 })
 
 const addHttpsIfMissing = (url) => {
@@ -22,11 +29,6 @@ const addHttpsIfMissing = (url) => {
     }
 }
 
-const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
-if(leadsFromLocalStorage){
-    myLeads = leadsFromLocalStorage;
-    render(myLeads);
-}
 
 function render(leads){
     let listItems = "";
