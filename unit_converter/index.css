@@ -1,0 +1,35 @@
+body{
+    background: #1F2937;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 600px;
+    text-align: center;
+}
+
+#head{
+    background: #6943FF;
+    padding: 20px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#value{
+    height: 50px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+#conversion{
+    background: #273549;
+    padding: 20px;
+    margin: 25px;
+    font-size: 600;
+    color: #CCC1FF;
+}
+
