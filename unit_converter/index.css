@@ -19,7 +19,9 @@ body{
 }
 
 #value{
+
     height: 50px;
+    width: 80px;
     border-radius: 10px;
     margin: 10px;
     text-align: center;
