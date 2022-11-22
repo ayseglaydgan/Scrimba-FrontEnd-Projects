@@ -1,7 +1,7 @@
 body{
     background: #1F2937;
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+
     color: white;
     margin: 0;
     padding: 0;
@@ -45,9 +45,14 @@ body{
 
 #conversion{
     background: #273549;
-    padding: 20px;
+    padding: 10px;
     margin: 25px;
-    font-size: 600;
+    font-size: 20px;
     color: #CCC1FF;
 }
 
+#result{
+    font-size: 17px;
+    color: white;
+    font-weight: lighter;
+}
