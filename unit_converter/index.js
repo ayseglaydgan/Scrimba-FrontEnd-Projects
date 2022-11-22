@@ -1,70 +1,71 @@
-const inputValue = document.getElementById('value');
+const inputvalue = document.getElementById('value');
 const convertBtn = document.getElementById('convert-btn');
-const length = document.getElementById('length');
-const mass = document.getElementById('mass');
-const volume = document.getElementById('volume');
+const lengthEl = document.getElementById('length');
+const massEl = document.getElementById('mass');
+const volumeEl = document.getElementById('volume');
+
+const FEET_TO_METER = 0.3048;
+const METER_TO_FEET = 3.28084;
+const KILO_TO_POUND = 2.20462;
+const POUND_TO_KILO = 0.453592;
+const GALLON_TO_LITER = 3.78541;
+const LITER_TO_GALLON = 0.264172;
+
 
 
 
 convertBtn.addEventListener('click', function() {
-    console.log(inputValue.value);
-    let value = inputValue.value;
+    console.log(inputvalue.value);
+    let value = inputvalue.value;
     convertLenght(value);
     convertVolume(value);
     convertWeight(value);
-    
-
 
 })
 
-function convertLenght(Value){
-    let meter = Value * 0.3048;
-    let feet = Value * 3.28084;
-    meter = meter.toFixed(3);
-    feet = feet.toFixed(3);
+function convertLenght(value){
+    let meter = (value * FEET_TO_METER).toFixed(3);
+    let feet = (value * METER_TO_FEET).toFixed(3);
     console.log(feet);
     console.log(meter);
     let result = `
     <p>
         <p id='result'>
-            ${Value} meter = ${feet} feet | ${Value} feet = ${meter} meters
+            ${value} meter = ${feet} feet | ${value} feet = ${meter} meters
         </p>
     </p>
 `
-    length.innerHTML += result;                       
+    lengthEl.innerHTML += result;                       
 
 }
 
-function convertWeight(Value){
-    let kilogram = Value * 0.453592;
-    let pound = Value * 2.20462;
-    kilogram = kilogram.toFixed(3);
-    pound = pound.toFixed(3);
+
+function convertWeight(value){
+    let kilogram = (value * POUND_TO_KILO).toFixed(3);
+    let pound = (value * KILO_TO_POUND).toFixed(3);
     console.log(kilogram);
     console.log(pound);
     let result = `
     <p>
         <p id='result'>
-            ${Value} kilos = ${pound} pounds | ${Value} pounds = ${kilogram} kilos
+            ${value} kilos = ${pound} pounds | ${value} pounds = ${kilogram} kilos
         </p>
     </p>
 `
-    mass.innerHTML += result;
+    massEl.innerHTML += result;
 }
 
-function convertVolume(Value){
-    let liter = Value * 0.264172;
-    let gallon = Value * 3.78541;
-    liter = liter.toFixed(3);
-    gallon = gallon.toFixed(3);
+function convertVolume(value){
+    let liter = (value * GALLON_TO_LITER).toFixed(3);
+    let gallon = (value * LITER_TO_GALLON).toFixed(3);
     console.log(liter); 
     console.log(gallon);
     let result = `
     <p>
         <p id='result'>
-            ${Value} liters = ${gallon} gallons | ${Value} gallons = ${liter} liters
+            ${value} liters = ${gallon} gallons | ${value} gallons = ${liter} liters
         </p>
     </p>
 `
-    volume.innerHTML += result;
+    volumeEl.innerHTML += result;
 }
