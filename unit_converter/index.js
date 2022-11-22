@@ -1,9 +1,9 @@
-const converBtn = document.getElementById('convert-btn');
+const inputValue = document.getElementById('value');
+const convertBtn = document.getElementById('convert-btn');
 
-console.log("alalal");
 
-converBtn.addEventListener('click', function() {
-    console.log(converBtn);
+convertBtn.addEventListener('click', function() {
+    console.log(inputValue.value);
 
 })
 
