@@ -1,4 +1,4 @@
-const inputvalue = document.getElementById('value');
+const inputEl = document.getElementById('value');
 const convertBtn = document.getElementById('convert-btn');
 const lengthEl = document.getElementById('length');
 const massEl = document.getElementById('mass');
@@ -15,8 +15,8 @@ const LITER_TO_GALLON = 0.264172;
 
 
 convertBtn.addEventListener('click', function() {
-    console.log(inputvalue.value);
-    let value = inputvalue.value;
+    console.log(inputEl.value);
+    let value = inputEl.value;
     convertLenght(value);
     convertVolume(value);
     convertWeight(value);
