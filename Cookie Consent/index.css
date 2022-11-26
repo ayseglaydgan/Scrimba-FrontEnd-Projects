@@ -154,3 +154,19 @@ input{
     line-height: 23px;
     margin-bottom: 0;
 }
+.modal-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-submit-btn{
+    margin-top: 10px;
+    padding: 12px 17px;
+    border: none;
+    background-color: #FC3D21;
+    color: #ecfeff;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer; 
+}
