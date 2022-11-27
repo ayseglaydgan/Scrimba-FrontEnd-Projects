@@ -123,7 +123,7 @@ main{
     justify-content: center;
 }
 
-.modal-btn{
+#modal-btn{
     padding: 10px 24px;
     cursor: pointer;
 }
@@ -154,19 +154,10 @@ input{
     line-height: 23px;
     margin-bottom: 0;
 }
-.modal-form{
-    display: flex;
-    flex-direction: column;
-}
 
-.modal-submit-btn{
+.button-container{
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
-    padding: 12px 17px;
-    border: none;
-    background-color: #FC3D21;
-    color: #ecfeff;
-    text-transform: uppercase;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer; 
+    padding: 8px 16px;
 }
