@@ -31,8 +31,7 @@ acceptBtnEl.addEventListener('click', function(){
 </div>`
     modalTextEl.innerHTML = newModalText;
     setTimeout(function(){
-        const uploadText = document.getElementById('upload-text');
-        uploadText.innerHTML = `Making the sale...`
+        document.getElementById('upload-text').textContent = `Making the sale...`
     }, 1500);
 });
 
