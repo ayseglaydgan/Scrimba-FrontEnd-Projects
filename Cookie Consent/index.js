@@ -24,14 +24,26 @@ setTimeout(function(){
 acceptBtnEl.addEventListener('click', function(){
     let newModalText = `
     <div class="modal-inner-loading">
-    <img src="images/loading.svg" class="loading">
-    <p id="upload-text">
-        Uploading your data to the dark web...
-    </p>
-</div>`
+        <img src="images/loading.svg" class="loading">
+        <p id="upload-text">
+            Uploading your data to the dark web...
+        </p>
+    </div>`
     modalTextEl.innerHTML = newModalText;
     setTimeout(function(){
         document.getElementById('upload-text').textContent = `Making the sale...`
     }, 1500);
+    
+    setTimeout(function(){
+        document.getElementsByClassName('modal-inner')[0].innerHTML = `<h2>Thanks you sucker! </h2>
+        <p>We just sold the rights to your eternal soul.</p>
+        <div class="idiot-gif">
+            <img src="images/pirate.gif">
+        </div>
+        `
+    },3000);
+
+    
+
 });
 
