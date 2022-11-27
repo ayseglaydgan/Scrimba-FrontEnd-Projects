@@ -161,3 +161,10 @@ input{
     margin-top: 10px;
     padding: 8px 16px;
 }
+.reverse{
+    flex-direction: row-reverse;
+}
+
+#formName{
+    color: fuchsia;
+}
