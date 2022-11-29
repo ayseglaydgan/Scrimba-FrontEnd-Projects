@@ -38,7 +38,7 @@ acceptBtnEl.addEventListener('click', function(e){
 
     setTimeout(function(){
         document.getElementById('upload-text').textContent = `Making the sale...`
-    }, 3000);
+    }, 1500);
     
     setTimeout(function(){
         closeEl.disabled = false;
