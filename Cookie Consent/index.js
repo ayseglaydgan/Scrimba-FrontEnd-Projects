@@ -34,6 +34,7 @@ acceptBtnEl.addEventListener('click', function(e){
             Uploading your data to the dark web...
         </p>
     </div>`
+    
     modalTextEl.innerHTML = newModalText;
 
     setTimeout(function(){
