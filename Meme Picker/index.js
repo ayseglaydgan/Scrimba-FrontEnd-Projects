@@ -2,11 +2,22 @@ import { catsData } from './data.js';
 
 const emotionRadiosEl = document.getElementById('emotion-radios')
 const getImageBtn = document.getElementById('get-image-btn');
-
+const gifsOnly = document.getElementById('gifs-only-option');
+const memeModal = document.getElementById('meme-modal');
+const memeModalInner = document.getElementById('meme-modal-inner');
+const closeMemeModal = document.getElementById('meme-modal-close-btn');
 
 
 emotionRadiosEl.addEventListener('change', highlightCheckedOption)
-getImageBtn.addEventListener('click', getMatchingCatsArray)
+
+closeMemeModal.addEventListener('click', closeModal)
+
+getImageBtn.addEventListener('click', renderCat)
+
+
+function closeModal(){
+    memeModal.style.display = 'none';
+}
 
 function highlightCheckedOption(e){
     const radioArray = document.getElementsByClassName('radio');
@@ -16,12 +27,37 @@ function highlightCheckedOption(e){
     document.getElementById(e.target.id).parentElement.classList.add('highlight')
 }
 
-function getMatchingCatsArray(){
-    const selectEmotion = document.querySelector('input[type="radio"]:checked').value
-    console.log(selectEmotion)
+function renderCat(){
+    const matchingCats = getMatchingCatsArray();
+    const cat = getSingleCatObject(matchingCats);
+    memeModalInner.innerHTML = `
+    <img 
+    class="cat-img" 
+    src="./images/${cat.image}"
+    alt="${cat.alt}"
+    >
+    `
+    memeModal.style.display = 'flex'
+    
 }
 
+function getSingleCatObject(cats){
+    const randomIndex = Math.floor(Math.random() * cats.length);
+    return cats[randomIndex];
+}
 
+function getMatchingCatsArray(){
+    const isGif = gifsOnly.checked
+
+    let selectEmotion = "";
+    if(document.querySelector('input[type="radio"]:checked')){
+        selectEmotion = document.querySelector('input[type="radio"]:checked').value;
+    }
+    const matchingCats = catsData.filter(function(cat){
+        return cat.emotionTags.includes(selectEmotion) && cat.isGif === isGif;
+    })
+    return matchingCats;
+}
 
 function getEmotionsArray(cats){
     let emotionsArray = [];
