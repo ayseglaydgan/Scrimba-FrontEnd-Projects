@@ -1,3 +1,5 @@
+import {catsData} from '/data.js'
+
 const emotionRadiosEl = document.getElementById('emotion-radios')
 
 
