@@ -19,15 +19,15 @@ function getFeedHtml(tweets){
                     <p class="tweet-text">${tweet.tweetText}</p>
                     <div class="tweet-details">
                         <span class="tweet-detail">
-                            <i class="fa-comment-dots fa-regular"></i>
+                            <i class="fa-comment-dots" fa-regular data-reply="${tweet.uuid}"></i>
                             ${tweet.replies.length}
                         </span>
                         <span class="tweet-detail">
-                            <i class="fa-heart fa-solid"></i>
+                            <i class="fa-heart fa-solid" data-like="${tweet.uuid}></i>
                             ${tweet.likes}
                         </span>
                         <span class="tweet-detail">
-                            <i class="fa-retweet fa-solid"></i>
+                            <i class="fa-retweet fa-solid" data-retweet="${tweet.uuid}"></i>
                             ${tweet.retweets}
                         </span>
                     </div>   
