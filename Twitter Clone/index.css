@@ -23,7 +23,7 @@ i {
 }
 
 .retweeted {
-    color: limegreen;
+    color: limegreen !important;
 }
 
 /* layout */
