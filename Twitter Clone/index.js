@@ -3,11 +3,28 @@ import { tweetsData } from './data.js';
 const tweetInput = document.getElementById('tweet-input');
 const tweetButton = document.getElementById('tweet-btn');
 
-tweetButton.addEventListener('click', function(){
+tweetButton.addEventListener('click', function () {
     console.log(tweetInput.value);
 });
 
-function getFeedHtml(tweets){
+document.addEventListener('click', function (event) {
+    if (event.target.dataset.like) {
+        handleClick(event.target.dataset.like);
+    }
+
+})
+
+function handleClick(tweetId) {
+    console.log(tweetId);
+    const targetTweetObj = tweetsData.filter(function (tweet) {
+        return tweet.uuid === tweetId;
+    })[0];
+    targetTweetObj.likes++;
+    renderFeed();
+    console.log(targetTweetObj.likes);
+}
+
+function getFeedHtml(tweets) {
     let tweetHtml = '';
     tweets.forEach(function (tweet) {
         tweetHtml += `
@@ -19,11 +36,11 @@ function getFeedHtml(tweets){
                     <p class="tweet-text">${tweet.tweetText}</p>
                     <div class="tweet-details">
                         <span class="tweet-detail">
-                            <i class="fa-comment-dots" fa-regular data-reply="${tweet.uuid}"></i>
+                            <i class="fa-comment-dots fa-regular" data-reply="${tweet.uuid}"></i>
                             ${tweet.replies.length}
                         </span>
                         <span class="tweet-detail">
-                            <i class="fa-heart fa-solid" data-like="${tweet.uuid}></i>
+                            <i class="fa-heart fa-solid" data-like="${tweet.uuid}"></i>
                             ${tweet.likes}
                         </span>
                         <span class="tweet-detail">
@@ -38,7 +55,7 @@ function getFeedHtml(tweets){
     return tweetHtml;
 }
 
-function renderFeed(){
+function renderFeed() {
     document.getElementById('feed').innerHTML = getFeedHtml(tweetsData);
 }
 
