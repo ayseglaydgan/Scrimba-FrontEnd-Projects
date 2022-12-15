@@ -2,11 +2,7 @@ import { tweetsData } from './data.js';
 
 
 const tweetInput = document.getElementById('tweet-input');
-const tweetButton = document.getElementById('tweet-btn');
 
-tweetButton.addEventListener('click', function (event) {
-    console.log(tweetInput.value);
-})
 
 document.addEventListener('click', function (event) {
     if (event.target.dataset.like) {
@@ -17,6 +13,9 @@ document.addEventListener('click', function (event) {
     }
     else if (event.target.dataset.reply) {
         handleReplyClick(event.target.dataset.reply);
+    }
+    else if (event.target.id === 'tweet-btn') {
+        handleTweetBtnClick()
     }
 })
 
@@ -46,6 +45,9 @@ function handleReplyClick(replyId) {
     document.getElementById(`replies-${replyId}`).classList.toggle('hidden');
 }
 
+function handleTweetBtnClick() {
+    console.log(tweetInput.value);
+}
 function getFeedHtml(tweets) {
     let tweetHtml = '';
 
