@@ -1,3 +1,36 @@
 body {
     margin: 0;
 }
+
+@font-face {
+    font-family: 'Smythe';
+    src: url("Smythe-Regular.ttf");
+
+}
+
+#header {
+    background-image: url('images/header.jpeg');
+    background-position: center;
+    background-size: cover;
+    padding: 10px;
+}
+
+#restaurant-name {
+    color: aliceblue;
+    font-family: 'Smythe', sans-serif;
+    padding: 20px;
+    font-size: 40px;
+    margin: 0px;
+
+}
+
+#restaurant-exp {
+    color: aliceblue;
+    font-family: 'Smythe', sans-serif;
+    padding: 20px;
+    font-size: 20px;
+    margin: 0px;
+
+
+
+}
