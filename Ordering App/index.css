@@ -31,6 +31,44 @@ body {
     font-size: 20px;
     margin: 0px;
 
+}
 
+.menu-item-left {
+    border-bottom: 10px solid #f2f2f2;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.menu-emoji {
+    font-size: 120px;
+    padding: 10px;
+}
+
+.menu-details {
+    padding: 10px;
+}
+
+.menu-item-name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.add-order-btn {
+    border-radius: 50%;
+    border: 1.5px solid #DEDEDE;
+    font-size: 20px;
+    font-weight: lighter;
+    float: right;
+    margin-right: 50px;
 
 }
