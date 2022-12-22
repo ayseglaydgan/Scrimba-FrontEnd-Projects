@@ -1,12 +1,15 @@
-body {
-    margin: 0;
-}
-
 @font-face {
     font-family: 'Smythe';
     src: url("Smythe-Regular.ttf");
 
 }
+
+body {
+    margin: 0;
+    font-family: 'Smythe', sans-serif;
+}
+
+
 
 #header {
     background-image: url('images/header.jpeg');
@@ -17,7 +20,6 @@ body {
 
 #restaurant-name {
     color: aliceblue;
-    font-family: 'Smythe', sans-serif;
     padding: 20px;
     font-size: 40px;
     margin: 0px;
@@ -26,7 +28,6 @@ body {
 
 #restaurant-exp {
     color: aliceblue;
-    font-family: 'Smythe', sans-serif;
     padding: 20px;
     font-size: 20px;
     margin: 0px;
@@ -34,6 +35,7 @@ body {
 }
 
 .menu-item-left {
+    width: 100%;
     border-bottom: 10px solid #f2f2f2;
     padding: 10px;
     margin: 10px;
@@ -63,7 +65,7 @@ body {
     font-weight: bold;
 }
 
-.add-order-btn {
+#add-order-btn {
     border-radius: 50%;
     border: 1.5px solid #DEDEDE;
     font-size: 20px;
