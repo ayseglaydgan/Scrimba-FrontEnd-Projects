@@ -1,9 +1,26 @@
-import { menuArray } from './data.js'
+import { menuArray } from './data.js';
+
+document.addEventListener('click', function (event) {
+    if (event.target.dataset.id) {
+        handleOrderBtnClick(event.target.dataset.id);
+    }
+
+})
+
+
+
+function handleOrderBtnClick(itemId) {
+    console.log(itemId);
+    console.log(menuArray)
+    const targetMenuItem = menuArray.filter(function (menuItem) {
+        return menuItem.id == itemId;
+    })[0];
+}
+
 
 function getMenuHtml(menu) {
     let menuHtml = '';
     menu.forEach(function (menuItem) {
-        console.log(menuItem);
         menuHtml += `
                 <div class = "menu-item">
                     <div class = "menu-item-left">
@@ -15,11 +32,10 @@ function getMenuHtml(menu) {
                         </div>
                     </div>
                     <div>
-                        <button class = "add-order-btn">+</button>
+                        <button id= "add-order-btn" data-id="${menuItem.id}">+</button>
                     </div>
-                </div>
-    
-        `
+                </div>`
+
     })
     return menuHtml;
 }
