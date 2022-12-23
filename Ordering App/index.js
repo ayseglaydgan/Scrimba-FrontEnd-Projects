@@ -12,9 +12,18 @@ document.addEventListener('click', function (event) {
 function handleOrderBtnClick(itemId) {
     console.log(itemId);
     console.log(menuArray)
+    let orderedHtml = '';
     const targetMenuItem = menuArray.filter(function (menuItem) {
         return menuItem.id == itemId;
     })[0];
+    console.log(targetMenuItem.name);
+    orderedHtml += `
+    <div class = "order-item">
+        <p class = "order-item-name">${targetMenuItem.name}</p>
+        <p class = "order-item-price">$${targetMenuItem.price}</p>
+    </div>
+    `
+    document.getElementById('order').innerHTML += orderedHtml;
 }
 
 
@@ -43,6 +52,7 @@ function getMenuHtml(menu) {
 
 function renderMenu() {
     document.getElementById('menu').innerHTML = getMenuHtml(menuArray);
+
 }
 
 renderMenu();
