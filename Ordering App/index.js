@@ -56,15 +56,16 @@ function handleCompleteOrderBtnClick() {
 
         <div class="modal-inner" id="modal-inner">
             <p>Enter card details</p>
-            <form id="consent-form">
-                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <div id="consent-form">
+                <input type=text id="card-name" name="card-name" placeholder="Enter your name" required>
 
-                <input type="card-number" id="card-number" name="card-number" placeholder="Enter card number" required>
-                <input type="card-CVV" id="card-CVV" name="card-CVV" placeholder="Enter card CVV" required>
+                <input type=number id="card-number" name="card-number" placeholder="Enter card number" required>
+
+                <input type=number id="card-CVV" name="card-CVV" placeholder="Enter card CVV" required>
 
                 <button type="pay" id="pay-btn" class="modal-btn">Pay
                 </button>
-            </form>
+            </div>
         </div>
     
     `
