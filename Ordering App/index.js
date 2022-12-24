@@ -7,24 +7,47 @@ document.addEventListener('click', function (event) {
 
 })
 
-
+let firstTime = true;
+let totalPrice = 0;
 
 function handleOrderBtnClick(itemId) {
     console.log(itemId);
     console.log(menuArray)
-    let orderedHtml = '';
+
     const targetMenuItem = menuArray.filter(function (menuItem) {
         return menuItem.id == itemId;
     })[0];
     console.log(targetMenuItem.name);
+    let orderedHtml = '';
+    let totalHtml = '';
+    if (firstTime) {
+        orderedHtml += `<div class="order-header">
+                        Your order
+                        </div>`
+        firstTime = false;
+    }
+
+    totalPrice += targetMenuItem.price;
     orderedHtml += `
     <div class = "order-item">
         <p class = "order-item-name">${targetMenuItem.name}</p>
         <p class = "order-item-price">$${targetMenuItem.price}</p>
     </div>
     `
+    totalHtml += `
+    <div class = "order-total">
+        <p class = "order-total-price">Total Price:</p>
+        <p class = "order-total-price">$${totalPrice}</p>
+    </div>
+    <div class = "complete-order">
+        <button class= "complete-order-btn">Complete Order</button>
+    </div>
+    `
     document.getElementById('order').innerHTML += orderedHtml;
+    document.getElementById('total').innerHTML = totalHtml;
 }
+
+
 
 
 function getMenuHtml(menu) {
