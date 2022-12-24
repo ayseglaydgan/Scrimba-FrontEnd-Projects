@@ -2,11 +2,15 @@ import { menuArray } from './data.js';
 
 
 document.addEventListener('click', function (event) {
+    let name = '';
     if (event.target.dataset.id) {
         handleOrderBtnClick(event.target.dataset.id);
     }
     else if (event.target.id === 'complete-order-btn') {
         handleCompleteOrderBtnClick();
+    }
+    else if (event.target.id === 'pay-btn') {
+        handlePayBtnClick();
     }
 })
 
@@ -55,23 +59,43 @@ function handleCompleteOrderBtnClick() {
     modalHtml = `
 
         <div class="modal-inner" id="modal-inner">
-            <p>Enter card details</p>
-            <div id="consent-form">
+            <p class="header">Enter card details</p>
+            <form id="consent-form">
                 <input type=text id="card-name" name="card-name" placeholder="Enter your name" required>
 
                 <input type=number id="card-number" name="card-number" placeholder="Enter card number" required>
 
                 <input type=number id="card-CVV" name="card-CVV" placeholder="Enter card CVV" required>
 
-                <button type="pay" id="pay-btn" class="modal-btn">Pay
+                <button type="submit" id="pay-btn" class="pay-btn">Pay
                 </button>
-            </div>
+            </form>
         </div>
     
     `
     document.getElementById('modal').innerHTML = modalHtml;
+
 }
 
+function handlePayBtnClick(e) {
+
+    const name = document.getElementById('card-name').value;
+
+    if (name === '') {
+        return;
+    }
+
+    let infoMessageHtml = '';
+    document.getElementById('modal').style.display = 'none';
+    document.getElementById('order').style.display = 'none';
+    document.getElementById('total').style.display = 'none';
+    infoMessageHtml = `
+    <div class="info-message">
+        <p class="info-message-text">Thanks ${name} ! Your order is on its way !</p>
+    </div>
+    `
+    document.getElementById('info-message').innerHTML = infoMessageHtml;
+}
 
 
 
