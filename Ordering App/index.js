@@ -1,10 +1,13 @@
 import { menuArray } from './data.js';
 
+
 document.addEventListener('click', function (event) {
     if (event.target.dataset.id) {
         handleOrderBtnClick(event.target.dataset.id);
     }
-
+    else if (event.target.id === 'complete-order-btn') {
+        handleCompleteOrderBtnClick();
+    }
 })
 
 let firstTime = true;
@@ -40,11 +43,32 @@ function handleOrderBtnClick(itemId) {
         <p class = "order-total-price">$${totalPrice}</p>
     </div>
     <div class = "complete-order">
-        <button class= "complete-order-btn">Complete Order</button>
+        <button id= "complete-order-btn" class= "complete-order-btn">Complete Order</button>
     </div>
     `
     document.getElementById('order').innerHTML += orderedHtml;
     document.getElementById('total').innerHTML = totalHtml;
+}
+
+function handleCompleteOrderBtnClick() {
+    let modalHtml = '';
+    modalHtml = `
+
+        <div class="modal-inner" id="modal-inner">
+            <p>Enter card details</p>
+            <form id="consent-form">
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <input type="card-number" id="card-number" name="card-number" placeholder="Enter card number" required>
+                <input type="card-CVV" id="card-CVV" name="card-CVV" placeholder="Enter card CVV" required>
+
+                <button type="pay" id="pay-btn" class="modal-btn">Pay
+                </button>
+            </form>
+        </div>
+    
+    `
+    document.getElementById('modal').innerHTML = modalHtml;
 }
 
 
