@@ -14,6 +14,8 @@ document.addEventListener('click', function (event) {
     }
 })
 
+
+
 let firstTime = true;
 let totalPrice = 0;
 
