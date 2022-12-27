@@ -1,6 +1,5 @@
 import { menuArray } from './data.js';
 
-
 document.addEventListener('click', function (event) {
     let name = '';
     if (event.target.dataset.id) {
@@ -13,7 +12,6 @@ document.addEventListener('click', function (event) {
         handlePayBtnClick();
     }
 })
-
 
 
 let firstTime = true;
@@ -56,6 +54,7 @@ function handleOrderBtnClick(itemId) {
     document.getElementById('total').innerHTML = totalHtml;
 }
 
+
 function handleCompleteOrderBtnClick() {
     let modalHtml = '';
     modalHtml = `
@@ -79,6 +78,7 @@ function handleCompleteOrderBtnClick() {
 
 }
 
+
 function handlePayBtnClick(e) {
 
     const name = document.getElementById('card-name').value;
@@ -98,7 +98,6 @@ function handlePayBtnClick(e) {
     `
     document.getElementById('info-message').innerHTML = infoMessageHtml;
 }
-
 
 
 function getMenuHtml(menu) {
