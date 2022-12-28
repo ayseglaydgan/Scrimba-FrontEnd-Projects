@@ -24,13 +24,17 @@ function getDiceRollArray(diceCount) {
    return randomDiceArray
 }
 
-function renderCharacter(obj) {
-   const { elementId, name, avatar, health, diceRoll, diceCount } = obj
+function getDiceHtml(diceCount) {
+   return getDiceRollArray(diceCount).map(function (randomNum) {
+      return `<div class="dice">${randomNum}</div>`
+   }).join(' ')
+}
 
-   const diceHtml = diceRoll.map(function (diceNum) {
-      return `<div class="dice">${diceNum}</div>`
-   })
-   const diceHtmlString = diceHtml.join(' ')
+function renderCharacter(obj) {
+   const { elementId, name, avatar, health, diceCount } = obj
+
+   const diceHtml = getDiceHtml(diceCount)
+
 
    document.getElementById(elementId).innerHTML =
       `<div class="character-card">
@@ -38,7 +42,7 @@ function renderCharacter(obj) {
             <img class="avatar" src="${avatar}" />
             <div class="health">health: <b> ${health} </b></div>
             <div class="dice-container">
-               ${diceHtmlString} 
+               ${diceHtml} 
             </div>
         </div>`
 }
