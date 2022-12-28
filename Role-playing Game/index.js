@@ -1,29 +1,41 @@
-/*
-Challenge: 
-1. Take the hard-coded HTML for the Wizard card, bring it 
-   into index.js and then inject it back into its div with 
-   JavaScript.
-2. Do the same for Orc card. 
-*/
+const hero = {
+   elementId: "hero",
+   name: "Wizard",
+   avatar: "images/wizard.png",
+   health: 60,
+   diceRoll: [3, 1, 4],
+   diceCount: 3
+}
+
+const monster = {
+   elementId: "monster",
+   name: "Orc",
+   avatar: "images/orc.png",
+   health: 10,
+   diceRoll: [2],
+   diceCount: 1
+}
 
 
-document.getElementById('hero').innerHTML = `
-    <div class="character-card">
-        <h4 class="name"> Wizard </h4>
-        <img class="avatar" src="images/wizard.png"/>
-        <p class="health">health: <b> 60 </b></p>
-        <div class="dice-container"><div class="dice"> 6 </div></div>
-    </div>   
-`
 
-document.getElementById('monster').innerHTML = `
-   <div class="character-card">
-      <h4 class="name"> Orc </h4>
-      <img class="avatar" src="images/orc.png" />
-      <p class="health">health: <b> 10 </b></p>
-      <div class="dice-container">
-         <div class="dice"> 4 </div>
-      </div>
-   </div>
-`
+function renderCharacter(obj) {
+   const { elementId, name, avatar, health, diceRoll, diceCount } = obj
 
+   const diceHtml = diceRoll.map(function (diceNum) {
+      return `<div class="dice">${diceNum}</div>`
+   })
+   const diceHtmlString = diceHtml.join(' ')
+
+   document.getElementById(elementId).innerHTML =
+      `<div class="character-card">
+            <h4 class="name"> ${name} </h4>
+            <img class="avatar" src="${avatar}" />
+            <div class="health">health: <b> ${health} </b></div>
+            <div class="dice-container">
+               ${diceHtmlString} 
+            </div>
+        </div>`
+}
+
+renderCharacter(hero);
+renderCharacter(monster);
