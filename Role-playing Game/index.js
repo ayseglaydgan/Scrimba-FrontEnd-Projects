@@ -16,7 +16,13 @@ const monster = {
    diceCount: 1
 }
 
-
+function getDiceRollArray(diceCount) {
+   const randomDiceArray = [];
+   for (let i = 0; i < diceCount; i++) {
+      randomDiceArray.push(Math.floor(Math.random() * 6));
+   }
+   return randomDiceArray
+}
 
 function renderCharacter(obj) {
    const { elementId, name, avatar, health, diceRoll, diceCount } = obj
@@ -36,6 +42,6 @@ function renderCharacter(obj) {
             </div>
         </div>`
 }
-
+getDiceRollArray(hero.diceCount)
 renderCharacter(hero);
 renderCharacter(monster);
