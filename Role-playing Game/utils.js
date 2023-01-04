@@ -12,3 +12,4 @@ function getDicePlaceholderHtml(diceCount) {
 
 
 export { getDiceRollArray, getDicePlaceholderHtml }
+

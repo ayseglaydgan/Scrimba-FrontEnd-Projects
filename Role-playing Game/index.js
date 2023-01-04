@@ -6,6 +6,8 @@ const orc = new Character(characterData.monster)
 
 function attack() {
    console.log("button clicked")
+   wizard.getDiceHtml()
+   orc.getDiceHtml()
    render()
 }
 

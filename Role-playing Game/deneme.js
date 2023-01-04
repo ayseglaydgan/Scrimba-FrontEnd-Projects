@@ -11,7 +11,7 @@ app working again.
 function Character(data) {
     Object.assign(this, data)
 
-    this.diceArray = getDicePlaceholderHtml(this.diceCount).join('')
+    this.diceArray = getDicePlaceholderHtml(this.diceCount)
 
     this.getDiceHtml = function () {
         this.currentDiceScore = getDiceRollArray(this.diceCount)
