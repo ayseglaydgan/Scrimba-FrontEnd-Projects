@@ -8,6 +8,8 @@ function attack() {
    console.log("button clicked")
    wizard.getDiceHtml()
    orc.getDiceHtml()
+   wizard.takeDamage(orc.currentDiceScore)
+   orc.takeDamage(wizard.currentDiceScore)
    render()
 }
 
