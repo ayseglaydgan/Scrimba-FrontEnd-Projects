@@ -10,8 +10,7 @@ function getDicePlaceholderHtml(diceCount) {
     })
 }
 
-const getPercentage = (maxHealth, remainingHealt) => remainingHealt * 100 / maxHealth
-
+const getPercentage = (remainingHealth, maximumHealth) => (100 * remainingHealth) / maximumHealth
 
 export { getDiceRollArray, getDicePlaceholderHtml, getPercentage }
 
