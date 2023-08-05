@@ -1,4 +1,5 @@
 import { menuArray } from './data.js';
+console.log(menuArray);
 
 document.addEventListener('click', function (event) {
     let name = '';
