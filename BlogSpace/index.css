@@ -1,0 +1,42 @@
+#blog-post {
+    margin: 0 auto;
+    width: 80%;
+    padding: 20px;
+    background-color: #e47575;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #000;
+}
+
+#title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#body {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #070707;
+}
+
+body {
+    background-color: #e9b5b5;
+    font-family: Karla, sans-serif;
+}
+
+#name {
+    text-align: center;
+    font-weight: bold;
+    color: #4b4545;
+    font-size: 40px;
+
+}
+
+form {
+    padding: 20px;
+    text-align: center;
+    display: grid;
+    background-color: rosybrown;
+    cursor: pointer;
+}
